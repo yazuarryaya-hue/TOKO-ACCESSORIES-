@@ -1,0 +1,520 @@
+/*
+Theme Name: Yazu Accessories
+Theme URI: https://yazuaccessories.local
+Author: Yazu Team
+Description: Tema kustom modern untuk toko online aksesoris fashion remaja.
+Version: 1.0
+Text Domain: yazu-accessories
+*/
+
+/* Reset & Variables */
+:root {
+    --primary: #ff6b81;
+    --primary-dark: #ff4757;
+    --accent: #ffebef;
+    --text-dark: #2f3542;
+    --text-light: #747d8c;
+    --bg-light: #f1f2f6;
+    --white: #ffffff;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --radius: 12px;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Header */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--white);
+    box-shadow: var(--shadow);
+    z-index: 1000;
+    transition: var(--transition);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo a {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--primary-dark);
+    letter-spacing: 1px;
+}
+
+.main-navigation ul {
+    display: flex;
+    gap: 25px;
+}
+
+.main-navigation a {
+    font-weight: 500;
+    color: var(--text-dark);
+    transition: var(--transition);
+}
+
+.main-navigation a:hover {
+    color: var(--primary);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.cart-icon-btn {
+    position: relative;
+    background: var(--accent);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: var(--primary-dark);
+}
+
+.cart-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: var(--primary-dark);
+    color: var(--white);
+    font-size: 11px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.whatsapp-btn-header {
+    background: #25d366;
+    color: var(--white);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: var(--transition);
+}
+
+.whatsapp-btn-header:hover {
+    background: #20ba5a;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, var(--accent) 0%, #fff 100%);
+    padding: 140px 20px 80px;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.hero-content h1 {
+    font-size: 40px;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.hero-content p {
+    font-size: 16px;
+    color: var(--text-light);
+    margin-bottom: 25px;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: var(--white);
+    padding: 12px 28px;
+    border-radius: 25px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+/* Sections General */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+/* Kategori Produk */
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.category-card {
+    background: var(--white);
+    padding: 25px;
+    text-align: center;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    background: var(--primary);
+    color: var(--white);
+}
+
+.category-card h3 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* Produk Grid */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+}
+
+.product-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.product-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.product-price {
+    color: var(--primary-dark);
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.product-rating {
+    color: #f39c12;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.product-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: auto;
+}
+
+.btn-detail, .btn-add-cart {
+    flex: 1;
+    padding: 8px 10px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    border: none;
+    transition: var(--transition);
+}
+
+.btn-detail {
+    background: var(--bg-light);
+    color: var(--text-dark);
+}
+
+.btn-detail:hover {
+    background: #dfe4ea;
+}
+
+.btn-add-cart {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.btn-add-cart:hover {
+    background: var(--primary-dark);
+}
+
+/* Tentang Kami */
+.about-section {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 40px;
+    box-shadow: var(--shadow);
+    margin-bottom: 40px;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.about-text p {
+    color: var(--text-light);
+    margin-bottom: 15px;
+}
+
+.features-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.feature-item {
+    background: var(--accent);
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--primary-dark);
+}
+
+/* Kontak */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    text-align: center;
+}
+
+.contact-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.contact-card i {
+    font-size: 28px;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.contact-card h4 {
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.contact-card p, .contact-card a {
+    color: var(--text-light);
+    font-size: 14px;
+}
+
+/* Keranjang Modal / Drawer */
+.cart-drawer {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 380px;
+    height: 100%;
+    background: var(--white);
+    box-shadow: -5px 0 25px rgba(0,0,0,0.1);
+    z-index: 2000;
+    transition: right 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-drawer.active {
+    right: 0;
+}
+
+.cart-header {
+    padding: 20px;
+    border-bottom: 1px solid var(--bg-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-cart {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.cart-body {
+    padding: 20px;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--bg-light);
+    padding-bottom: 15px;
+}
+
+.cart-footer {
+    padding: 20px;
+    border-top: 1px solid var(--bg-light);
+    background: var(--bg-light);
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.btn-checkout {
+    width: 100%;
+    background: #25d366;
+    color: var(--white);
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+}
+
+/* Footer */
+.site-footer {
+    background: var(--text-dark);
+    color: var(--white);
+    padding: 40px 20px 20px;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 30px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    width: 35px;
+    height: 35px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    background: var(--primary);
+}
+
+.copyright {
+    margin-top: 20px;
+    font-size: 13px;
+    color: var(--text-light);
+}
+
+/* Responsif */
+@media(max-width: 768px) {
+    .main-navigation {
+        display: none;
+    }
+    .hero-content h1 {
+        font-size: 30px;
+    }
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+    .cart-drawer {
+        width: 100%;
+        right: -100%;
+    }
+}
